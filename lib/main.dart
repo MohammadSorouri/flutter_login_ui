@@ -9,25 +9,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: "Nunito",
+        primarySwatch: Colors.lightBlue,
       ),
-      home: MyHomePage(),
+      home: null,
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-
-
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold();
   }
 }
