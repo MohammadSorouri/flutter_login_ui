@@ -38,15 +38,18 @@ class _LoginPageState extends State<LoginPage> {
           )
       ),
     );
-    final loginButton = Material(
-      shadowColor: Colors.lightBlue.shade100,
-      elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      child: MaterialButton(onPressed: (){},
-        minWidth: 200,
-        height: 42,
+    final loginButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        onPressed: () {
+        //  Navigator.of(context).pushNamed(HomePage.tag);
+        },
+        padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
-        child: Text("Log In",style: TextStyle(color: Colors.white),),
+        child: Text('Log In', style: TextStyle(color: Colors.white)),
       ),
     );
     final forgotLabel = FlatButton(
@@ -54,6 +57,25 @@ class _LoginPageState extends State<LoginPage> {
 
     );
 
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.only(left: 24,right: 24),
+          children: <Widget>[
+            logo,
+            SizedBox(height: 48,),
+            email,
+            SizedBox(height: 8,),
+            password,
+            SizedBox(height: 24,),
+            loginButton,
+            forgotLabel,
+
+          ],
+        ),
+      ),
+    );
   }
 }
